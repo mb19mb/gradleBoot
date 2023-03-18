@@ -1,0 +1,27 @@
+{
+	"name": "Java",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "8", //Can change to another of Java
+			"INSTALL_MAVEN": "false",
+			"INSTALL_GRADLE": "true",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"java.jdt.ls.java.home": "/docker-java-home"
+			},
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"redhat.vscode-xml",
+				"GitHub.github-vscode-theme"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc" //Set Terminal Prompt to $
+}
